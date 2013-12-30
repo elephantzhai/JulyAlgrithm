@@ -6,6 +6,49 @@
 void leftRouteStringMain(){
 	violenceMoveSample();
 	pointerMethodOneSample();
+	pointerMethodTwoSample();
+}
+
+void pointerMethodTwoSample(){
+	string  s = "abcedfg";
+	int moveNum = 3;
+	pointerMethodTwo(s,moveNum);
+	cout<<s<<endl;
+}
+
+void pointerMethodTwo(string &str,int m){
+	if(str.length()==0 || m<=0)
+		return;
+
+	int n = str.length();
+
+	if(m % n <= 0)
+		return;
+
+	int p1 = 0,p2 = m;
+
+	while(true){
+		swap(str[p1],str[p2]);
+		p1++;
+		if(p2<n-1){
+			p2++;
+		}else{
+			break;
+		}
+	}
+
+	int r = m-n%m;
+	while(r--){
+		int i = p1;
+		char temp = str[p1];
+		while(i<p2){
+			str[i] = str[i+1];
+			i++;
+		}
+		str[p2] = temp;
+	}
+	
+
 }
 
 void pointerMethodOneSample(){

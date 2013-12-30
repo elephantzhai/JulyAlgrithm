@@ -4,6 +4,9 @@
 using namespace std;
 void leftRouteStringMain();
 
+void pointerMethodTwoSample();
+void pointerMethodTwo(string &str,int m);
+
 void pointerMethodOneSample();
 void pointerMethodOne(string &str,int m);
 
