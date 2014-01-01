@@ -4,6 +4,9 @@
 using namespace std;
 void leftRouteStringMain();
 
+void recursionSample();
+void recursionString(string &str,int n,int m,int head,int tail,bool flag);
+
 void pointerMethodTwoSample();
 void pointerMethodTwo(string &str,int m);
 

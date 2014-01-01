@@ -7,10 +7,52 @@ void leftRouteStringMain(){
 	violenceMoveSample();
 	pointerMethodOneSample();
 	pointerMethodTwoSample();
+	recursionSample();
+}
+
+void recursionSample(){
+	string s = "abcdefg";
+	int moveNum = 3;
+	recursionString(s,s.length(),moveNum,0,s.length()-1,true);
+	cout<<s<<endl;
+}
+void recursionString(string &str,int n,int m,int head,int tail,bool flag){
+	//n:length of string which will be operate m:length of string which should be route
+	//head:the begin position of string which wait to be operate tail:the end position of string which wait to be operate
+	//flag:true- left turn flase- right turn
+
+	//return condition
+	if (head == tail || m == 0)
+		return;
+
+	if(flag == true){
+		//left turn
+		int p1 = head;
+		int p2 = head + m;
+		int k = (n-m) - n%m;
+		for(int i=0;i<k;i++,p1++,p2++){
+			swap(str[p1],str[p2]);
+		}
+		
+
+		recursionString(str,n-k,n%m,p1,tail,false);
+	}else{
+		//right turn
+
+		int p1 = tail;
+		int p2 = tail - m;
+		int k = (n - m) - n%m;
+		for(int i=0;i<k;i++,p1--,p2--){
+			swap(str[p1],str[p2]);
+		}
+
+		recursionString(str,n-k,n%m,head,p1,true);
+	}
+
 }
 
 void pointerMethodTwoSample(){
-	string  s = "abcedfg";
+	string  s = "abcdefg";
 	int moveNum = 3;
 	pointerMethodTwo(s,moveNum);
 	cout<<s<<endl;
@@ -52,7 +94,7 @@ void pointerMethodTwo(string &str,int m){
 }
 
 void pointerMethodOneSample(){
-	string  s = "abcedfg";
+	string  s = "abcdefg";
 	int moveNum = 3;
 	pointerMethodOne(s,moveNum);
 	cout<<s<<endl;
