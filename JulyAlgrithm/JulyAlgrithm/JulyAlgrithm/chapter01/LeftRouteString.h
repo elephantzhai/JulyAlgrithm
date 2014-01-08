@@ -4,6 +4,10 @@
 using namespace std;
 void leftRouteStringMain();
 
+void repeateMoveSample();
+void repeateMove(string &str,int m);
+int gcd (int m,int n);
+
 void recursionSample();
 void recursionString(string &str,int n,int m,int head,int tail,bool flag);
 

@@ -3,12 +3,54 @@
 
 
 
+
 void leftRouteStringMain(){
 	violenceMoveSample();
 	pointerMethodOneSample();
 	pointerMethodTwoSample();
 	recursionSample();
+	repeateMoveSample();
+
 }
+
+void repeateMoveSample(){
+	string s = "abcdefg";
+	int moveNum = 3;
+	repeateMove(s,moveNum);
+	cout<<s<<endl;
+}
+void repeateMove(string &str,int m){
+	int lenOfStr = str.length();
+	int numOfGroup = gcd(lenOfStr,m);
+	int elemInSub = lenOfStr/numOfGroup;
+
+	for(int i = 0,j=0 ;i<numOfGroup;i++){
+		char temp = str[i];
+		for(j = 0;j<elemInSub-1;j++){
+			str[(i+j*m)%lenOfStr] = str[(i+(j+1)*m)%lenOfStr];
+		}
+		str[(i+j*m)%lenOfStr] = temp;
+	}
+}
+int gcd (int m,int n){
+	
+	if (n==m) return n;
+	int r = 1;
+	while(r != 0){
+		if(n>m) {
+			m = m+n;
+			n = m-n;
+			m = m-n;
+		}
+		r = m%n;
+		m = n;
+		n = r;
+	}
+	return m;
+
+}
+
+
 
 void recursionSample(){
 	string s = "abcdefg";

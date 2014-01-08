@@ -16,6 +16,9 @@
     <Filter Include="Source Files\chapter01">
       <UniqueIdentifier>{56941673-5574-4d99-9c49-dcbb1b416dbb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\chapter02">
+      <UniqueIdentifier>{4961f93f-8dab-4273-ae33-51576d0357bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -33,6 +36,9 @@
     <ClInclude Include="chapter01\LeftRouteString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="chapter02\CompareString.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="chapter01\LeftRouteString.cpp">
       <Filter>Source Files\chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter02\CompareString.cpp">
+      <Filter>Source Files\chapter02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
