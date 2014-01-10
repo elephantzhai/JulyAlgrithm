@@ -4,6 +4,10 @@ using namespace std;
 
 void compareStringMain();
 
+void countSortCompareStringSample();
+void countSort(string &str,string &help_str);
+bool countSortCompare(string &longStr,string &shortStr);
+
 void sortCompareStringSample();
 void quickSort(string &str,int lo,int hi);
 int partition(string &str,int lo,int hi);

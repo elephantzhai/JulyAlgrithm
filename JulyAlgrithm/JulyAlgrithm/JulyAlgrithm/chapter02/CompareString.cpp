@@ -3,10 +3,68 @@
 
 void compareStringMain(){
 	//volientCompareStringSample();
-	sortCompareStringSample();
+	//sortCompareStringSample();
+	countSortCompareStringSample();
 
 
 }
+
+void countSortCompareStringSample(){
+	string a = "abcdefg";
+	string b = "abc";
+	string longsStr = a;
+	string shortStr = b;
+	countSort(a,longsStr);
+	countSort(b,shortStr);
+	bool result =countSortCompare(a,b);
+	if(result)
+		cout<<"true"<<endl;
+	else
+		cout<<"false"<<endl;
+}
+
+void countSort(string &str,string &help_str){
+	int help[26] = {0};
+
+	for(int i=0;i<str.length();i++){
+		int index = str[i] - 'a';
+		help[index] += 1;
+	}
+
+	for(int i=1;i<26;i++){
+		help[i] += help[i-1];
+	}
+
+	for(int i=0;i<str.length();i++ ){
+		int index = str[i] -'a';
+		help[help[index]-1] = str[i];
+		help[index] -= 1;
+	}
+}
+
+bool countSortCompare(string &longStr,string &shortStr){
+	int longPosition = 0;
+	int shortPosition = 0;
+	bool isContain = true;
+	while(longPosition<longStr.length() && shortPosition <shortStr.length()){
+		while(longStr[longPosition]<shortStr[shortPosition] && longPosition<longStr.length()-1)
+			longPosition++;
+
+		while(shortStr[shortPosition] == shortStr[shortPosition + 1])
+			shortPosition++;
+		
+		if(longStr[longPosition] != shortStr[shortPosition]){
+			isContain = false;
+			break;
+		}
+
+		longPosition++;
+		shortPosition++;
+	}
+	return isContain;
+
+}
+
 void sortCompareStringSample(){
 	string a = "abcdefg";
 	string b = "abc";
@@ -53,7 +111,7 @@ bool sortCompareString(string &longStr,string &shortStr){
 			isContain = false;
 			break;
 		}else{
-			strLongPostion++;
+			//strLongPostion++;
 			strShortPostion++;
 		}
 	}
