@@ -4,6 +4,9 @@ using namespace std;
 
 void compareStringMain();
 
+void primeCompareStringSample();
+bool primeCompareString(string &longStr,string &shortStr);
+
 void hashCompareStringSample();
 bool hashCompareString(string &longStr,string &shortStr);
 

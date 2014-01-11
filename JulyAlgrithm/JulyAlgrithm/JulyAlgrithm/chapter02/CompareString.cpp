@@ -5,7 +5,43 @@ void compareStringMain(){
 	//volientCompareStringSample();
 	//sortCompareStringSample();
 	//countSortCompareStringSample();
-	hashCompareStringSample();
+	//hashCompareStringSample();
+	primeCompareStringSample();
+
+}
+
+void primeCompareStringSample(){
+	string a = "abcdefg";
+	string b = "abc";
+	bool result =primeCompareString(a,b);
+	if(result)
+		cout<<"true"<<endl;
+	else
+		cout<<"false"<<endl;
+}
+
+bool primeCompareString(string &longStr,string &shortStr){
+	int primeNum[26] = {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,
+		61,67,71,73,79,83,89,97,101};
+	int longProduct = 1;
+
+	for(int i=0;i<longStr.length();i++){
+		int index = longStr[i] - 'a';
+		longProduct *= primeNum[index];
+	}
+
+	bool isContain = true;
+	for(int i=0;i<shortStr.length();i++){
+		int index = shortStr[i] - 'a';
+		if(longProduct%primeNum[index]!=0){
+			isContain = false;
+			break;
+		}
+			
+	}
+
+	return isContain;
+
 
 }
 
