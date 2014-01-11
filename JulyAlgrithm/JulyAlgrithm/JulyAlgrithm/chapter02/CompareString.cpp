@@ -4,9 +4,49 @@
 void compareStringMain(){
 	//volientCompareStringSample();
 	//sortCompareStringSample();
-	countSortCompareStringSample();
+	//countSortCompareStringSample();
+	hashCompareStringSample();
 
+}
 
+void hashCompareStringSample(){
+	string a = "abcdefg";
+	string b = "abc";
+	bool result =hashCompareString(a,b);
+	if(result)
+		cout<<"true"<<endl;
+	else
+		cout<<"false"<<endl;
+}
+
+bool hashCompareString(string &longStr,string &shortStr){
+	int hashTable[26] = {0};
+	int num = 0;
+
+	for(int i=0;i<shortStr.length();i++){
+		int index = shortStr[i]-'a';
+		if (hashTable[index]==0){
+			hashTable[index] = 1;
+			num++;
+		}
+			
+	}
+
+	for(int i=0;i<longStr.length();i++){
+		int index = longStr[i] - 'a';
+
+		if(hashTable[index]==1){
+			hashTable[index]=0;
+			num--;
+			if(num==0)
+				break;
+		}
+	}
+
+	if(num==0)
+		return true;
+	else
+		return false;
 }
 
 void countSortCompareStringSample(){

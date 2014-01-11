@@ -4,6 +4,9 @@ using namespace std;
 
 void compareStringMain();
 
+void hashCompareStringSample();
+bool hashCompareString(string &longStr,string &shortStr);
+
 void countSortCompareStringSample();
 void countSort(string &str,string &help_str);
 bool countSortCompare(string &longStr,string &shortStr);
