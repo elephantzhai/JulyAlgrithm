@@ -82,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="chapter01\LeftRouteString.h" />
     <ClInclude Include="chapter02\CompareString.h" />
+    <ClInclude Include="chapter03\KMin.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -89,6 +90,7 @@
   <ItemGroup>
     <ClCompile Include="chapter01\LeftRouteString.cpp" />
     <ClCompile Include="chapter02\CompareString.cpp" />
+    <ClCompile Include="chapter03\KMin.cpp" />
     <ClCompile Include="JulyAlgrithm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
