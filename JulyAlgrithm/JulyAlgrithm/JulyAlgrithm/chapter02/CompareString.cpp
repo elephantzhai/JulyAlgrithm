@@ -166,7 +166,7 @@ int partition(string &str,int lo,int hi){
 	char key = str[hi];
 	int i = lo-1;
 
-	for(int j=0;j<hi;j++){
+	for(int j=lo;j<hi;j++){
 		if(str[j]<=key){
 			i++;
 			swap(str[i],str[j]);
