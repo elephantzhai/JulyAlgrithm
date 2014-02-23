@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<iostream>
-#include<algorithm>
+#include <stdio.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 struct node
